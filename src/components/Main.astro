@@ -1,0 +1,71 @@
+---
+import ServiceCard from "./ServiceCard"
+import Intro from './Intro'
+import AboutMe from './AboutMe'
+import Pricing from './Pricing'
+
+import { motion } from 'framer-motion'
+---
+
+<header
+  class="w-full flex justify-center items-center bg-[#18171b]/90 backdrop-blur-md fixed z-50 shadow-md h-[2rem]"
+>
+  <nav
+    class="flex justify-center space-x-4 px-4 text-sm text-[#fcfcfcf1] font-light"
+  >
+    <button id="youtube" class="hover:text-[#8f505e] transition duration-300 cursor-pointer">YOUTUBE</button>
+    <span class="cursor-default">|</span>
+    <button id="discord" class="hover:text-[#8f505e] transition duration-300 cursor-pointer">DISCORD</button
+    >
+    <span class="cursor-default">|</span>
+    <button id="github" class="hover:text-[#8f505e] transition duration-300 cursor-pointer">GITHUB</button>
+  </nav>
+</header>
+
+<main class="pt-[2rem]">
+  <Intro client:load/>
+
+  <AboutMe client:load/>
+
+  <Pricing client:load/>
+
+  <section class="flex justify-center flex-wrap gap-6 px-6 py-10">
+        <ServiceCard
+          title="Web Development"
+          description="Experience with HTML, CSS, JS, React, Next.js, Astro, Vite, Spring, PHP, ASP.NET, MySQL, MongoDB, FramerMotion"
+          client:load
+        />
+
+        <ServiceCard
+          title="Game Development"
+          description="Experienced in Unity, Godot, Pygame, Roblox Studio, OpenGL"
+          client:load
+        />
+
+        <ServiceCard
+          title="Desktop App Development"
+          description="Experience with C++, Python, Java, Electron, Qt, .NET, Docker"
+          client:load
+        />
+
+        <ServiceCard
+          title="Mobile Development"
+          description="Experienced with Kotlin, Java, SQLite, React Native, Swift"
+          client:load
+        />
+  </section>
+</main>
+
+<script type="text/javascript">
+  const options = {
+      youtube: "https://www.youtube.com/@kr3mid",
+      discord: "https://discord.com/users/1279225658685526047",
+      github: "https://github.com/Kr3my"
+    }
+
+    for(const [key, value] of Object.entries(options)) {
+      const element = document.getElementById(key)
+
+      element.addEventListener("click", () => open(value))
+    }
+</script>
