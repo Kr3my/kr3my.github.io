@@ -9,7 +9,7 @@ export default function ServiceCard({title, description}) {
         class="w-[17rem] h-[20rem] bg-[#17161af1] shadow-xl rounded-2xl p-4 flex flex-col items-center">
             <h3 class="text-xl font-light text-[#64b4fff1] mb-1">{title}</h3>
             <hr class="w-full border-[#5eb6ff] mb-2" />
-            <p class="text-sm text-center text-[#385f83] font-light">{description}</p>
+            <p class="text-sm text-center text-[#5998d3] font-light">{description}</p>
         </motion.article>
     )
 }
